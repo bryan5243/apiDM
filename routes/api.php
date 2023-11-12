@@ -17,7 +17,7 @@ use App\Http\Controllers\ChequeoMedicoController;
 |
 */
 
-
+Route::prefix('api')->group(function () {
 Route::get('pacientes', [PacienteController::class, 'listar']);
 Route::put('pacientes/{id}', [PacienteController::class, 'actualizar']);
 Route::post('/usuarios/login', [UsuarioController::class, 'login']);
@@ -29,6 +29,7 @@ Route::get('/chequeomedico/{id}', [ChequeoMedicoController::class, 'cargarDatos'
 Route::get('/usuarios', [UsuarioController::class, 'listar']);
 Route::post('/usuarios', [UsuarioController::class, 'guardar']);
 Route::put('/usuarios/{id}', [UsuarioController::class, 'actualizar']);
+});
 
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
