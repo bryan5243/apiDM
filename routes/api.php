@@ -22,11 +22,12 @@ Route::put('pacientes/{id}', [PacienteController::class, 'actualizar']);
 Route::post('/usuarios/login', [UsuarioController::class, 'login']);
 Route::post('pacientes/buscarPorCedula', [PacienteController::class, 'buscarPorCedula']);
 
-Route::get('/chequeomedico',  [ChequeoMedicoController::class, 'listar']);
+Route::get('/chequeomedico', [ChequeoMedicoController::class, 'listar']);
 Route::get('/chequeomedico/{id}', [ChequeoMedicoController::class, 'cargarDatos']);
 
 Route::get('/usuarios', [UsuarioController::class, 'listar']);
 Route::post('/usuarios', [UsuarioController::class, 'guardar']);
+
 Route::put('/usuarios/{id}', [UsuarioController::class, 'actualizar']);
 
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
